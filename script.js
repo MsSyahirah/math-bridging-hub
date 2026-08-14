@@ -7518,3 +7518,4 @@ document.getElementById("howToModal")?.addEventListener("click", event => { if (
    ========================================================= */
 
 renderWeekCards();
+showHowToOnFirstVisit();
