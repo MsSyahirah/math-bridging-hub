@@ -1,11 +1,1042 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Bridging Hub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Foundation Math Hub for Higher Nitec in Chemical Process Technology">
+  <title>Foundation Math Hub</title>
+  <link rel="stylesheet" href="style.css?v=13">
+  <script src="script.js?v=13" defer></script>
 </head>
 <body>
-  <h1>Bridging Hub – Pilot Page</h1>
-  <p>If you can see this, your page works 🎉</p>
+
+<!-- ======================================================
+     FOUNDATION MATH HUB
+     MULTI-WEEK PILOT WEBSITE
+     ====================================================== -->
+
+<header class="site-header">
+  <div class="container header-content">
+
+    <div class="brand-group">
+
+      <!-- This is a simple text logo, not the official image logo -->
+      <div class="ite-logo">ITE</div>
+
+      <div class="brand-text">
+        <h1>Foundation Math Hub</h1>
+
+        <p class="course-name">
+          Higher Nitec in Chemical Process Technology
+        </p>
+
+        <p class="tagline">
+          Learn mathematics. Apply it to chemical process engineering.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="header-buttons">
+
+      <button
+        class="button button-light hidden"
+        id="backToWeeksButton"
+      >
+        ← All Weeks
+      </button>
+
+      <button
+        class="button button-light hidden"
+        id="resetProgressButton"
+      >
+        Reset Progress
+      </button>
+
+    </div>
+
+  </div>
+</header>
+
+
+<main class="container">
+
+  <!-- ==================================================
+       MAIN HOMEPAGE
+       Students select the available week here.
+       ================================================== -->
+
+  <section id="weekHome">
+
+    <section class="home-hero">
+
+      <div>
+        <span class="small-label light-label">
+          Foundation Mathematics EcoHub
+        </span>
+
+        <h2>Build Your Foundation. Master MEB.</h2>
+
+        <p>
+          Strengthen the essential mathematics skills you need for Material &amp; Energy Balance through guided practice, checkpoints and progressive learning activities.
+        </p>
+      </div>
+
+      <div class="home-character">
+        🧑‍🎓
+      </div>
+
+    </section>
+
+
+    <section class="section-card">
+
+      <div class="section-heading">
+        <div>
+          <span class="small-label">
+            Weekly Learning Journey
+          </span>
+
+          <h2>How to use the EcoHub</h2>
+
+          <p>
+            Follow the steps in order for each available week.
+          </p>
+        </div>
+      </div>
+
+      <ol class="how-to-list">
+        <li><strong>Start with the Pre-Test</strong> to check what you already know.</li>
+        <li><strong>Complete each Mission</strong> and work through the guided practice.</li>
+        <li><strong>Finish the Edcafe Checkpoint</strong> after every mission using your full name and class.</li>
+        <li><strong>Show your completed checkpoint to your lecturer</strong> before moving to the next mission.</li>
+        <li><strong>Complete the Post-Test</strong> after finishing all missions.</li>
+        <li><strong>Submit the Student Feedback Form</strong> at the end.</li>
+      </ol>
+
+      <div class="how-to-note">
+        <strong>Important:</strong>
+        Do not skip activities. Complete the learning journey in sequence so that your progress can be properly recorded.
+      </div>
+
+      <!-- JavaScript creates the weekly cards here -->
+      <div class="week-grid" id="weekGrid"></div>
+
+    </section>
+
+  </section>
+
+
+  <!-- ==================================================
+       SELECTED WEEK WEBSITE
+       This is hidden until a student opens a week.
+       ================================================== -->
+
+  <section class="hidden" id="weekApp">
+
+    <!-- WEEK INTRODUCTION -->
+
+    <section class="week-hero">
+
+      <div class="week-hero-text">
+        <span class="small-label hero-label" id="weekLabel">
+          Week 1
+        </span>
+
+        <h2 id="weekTitle">
+          MEB Formula Foundations
+        </h2>
+
+        <p id="weekDescription"></p>
+
+        <div class="topic-tags" id="weekTags"></div>
+
+        <div
+          class="week-sound-control hidden"
+          id="weekSoundControl"
+          aria-label="Week 3 sound controls"
+        >
+          <div class="week-sound-copy">
+            <span aria-hidden="true">🎧</span>
+            <div>
+              <strong>Plant Journey Sound</strong>
+              <small>Hear movement, plant events and achievement sounds.</small>
+            </div>
+          </div>
+
+          <button
+            class="journey-sound-toggle"
+            id="weekSoundToggle"
+            type="button"
+            aria-pressed="true"
+            aria-label="Turn plant journey sound off"
+          >
+            🔊 Sound On
+          </button>
+        </div>
+      </div>
+
+      <div class="level-box">
+
+        <div class="large-character" id="heroCharacter">
+          🧑‍🎓
+        </div>
+
+        <p>Current Level</p>
+
+        <strong id="heroLevel">
+          Student
+        </strong>
+
+      </div>
+
+    </section>
+
+
+    <!-- WEEKLY LEARNING OUTCOMES -->
+
+    <section
+      class="section-card onboarding-card hidden"
+      id="outcomesSection"
+    >
+      <span class="small-label">Start Here</span>
+
+      <h2>What are we learning?</h2>
+
+      <p class="onboarding-intro" id="outcomesIntro">
+        In Week 2, you will learn how composition, flow rates and
+        molarity are used to describe a chemical process stream.
+      </p>
+
+      <div class="outcomes-box">
+        <h3>By the end of this lesson, you should be able to:</h3>
+
+        <ul class="outcome-list" id="outcomesList">
+          <li>Convert between percentage and fraction.</li>
+          <li>Calculate mass fraction and mole fraction.</li>
+          <li>Calculate the flow rate of an individual component.</li>
+          <li>Distinguish between mass, molar and volumetric flow rates.</li>
+          <li>Use density, molar mass and molarity in flow calculations.</li>
+          <li>Combine several formulas to analyse a process stream.</li>
+          <li>Check whether fractions, flow rates and units are reasonable.</li>
+        </ul>
+      </div>
+
+      <p class="onboarding-note" id="outcomesNote">
+        You will move through the lesson one checkpoint at a time.
+        Choose one learning method, complete the guided activities and
+        finish with the Week 2 MEB Challenge.
+      </p>
+
+      <div class="onboarding-actions">
+        <button
+          class="button button-primary"
+          id="outcomesContinueButton"
+        >
+          Continue to Learn Your Way →
+        </button>
+      </div>
+    </section>
+
+
+    <!-- WEEK 2 LEARNING METHOD PAGE -->
+
+    <section
+      class="section-card learning-path-page hidden"
+      id="learningPathSection"
+    >
+      <button
+        class="button button-light"
+        id="backFromLearningPathButton"
+      >
+        ← Back to Activities
+      </button>
+
+      <div class="learning-path-heading">
+        <span class="small-label">Choose Your Learning Path</span>
+        <h2>Learn Your Way</h2>
+        <p><strong>Pick one way to learn.</strong></p>
+        <p>You can always return and try another method later.</p>
+      </div>
+
+      <div
+        class="learning-choice-grid"
+        id="learningChoiceGrid"
+      ></div>
+
+      <div class="learning-path-footer">
+        <p id="learningMethodStatus">
+          Choose Read or Listen to begin. Watch is coming soon.
+        </p>
+
+        <button
+          class="button button-green"
+          id="learningPathContinueButton"
+          disabled
+        >
+          I Have Finished — Continue to Guided Practice
+        </button>
+      </div>
+    </section>
+
+
+    <!-- STUDENT SUMMARY -->
+
+    <section class="summary-grid" id="summarySection">
+
+      <article class="summary-card summary-card-action">
+        <span class="summary-icon">⭐</span>
+
+        <div>
+          <p>Mastery Stars</p>
+
+          <strong>
+            <span id="starCount">0</span> / 5
+          </strong>
+
+          <button
+            class="summary-link-button"
+            type="button"
+            onclick="scrollToRewardCentre()"
+          >
+            View My Stars
+          </button>
+        </div>
+      </article>
+
+
+      <article class="summary-card summary-card-action">
+        <span class="summary-icon">🎟️</span>
+
+        <div>
+          <p>Reward Tokens</p>
+
+          <strong id="bonusTokenCount">
+            0
+          </strong>
+
+          <button
+            class="summary-link-button"
+            type="button"
+            onclick="scrollToRewardCentre()"
+          >
+            Use My Token
+          </button>
+        </div>
+      </article>
+
+
+      <article class="summary-card summary-card-action">
+        <span class="summary-icon">📚</span>
+
+        <div>
+          <p>Checkpoint Progress</p>
+
+          <strong id="checkpointSummary">
+            0 / 5
+          </strong>
+
+          <button
+            class="summary-link-button"
+            type="button"
+            onclick="scrollToActivities()"
+          >
+            Continue Learning
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+
+    <!-- STUDENT ADVENTURE ROUTE -->
+
+    <section class="section-card" id="routeSection">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="small-label">
+            Your Weekly Adventure
+          </span>
+
+          <h2>Your Mission: Reach the MEB Goal</h2>
+
+          <p>
+            Complete each checkpoint to build your skills and reach
+            the final goal.
+          </p>
+        </div>
+
+        <div class="route-status" id="routeStatus">
+          Next checkpoint: Fractions and Ratios
+        </div>
+
+      </div>
+
+
+      <div class="route-scroll">
+
+        <div class="route-track">
+
+          <!-- Grey-blue full route -->
+          <div class="route-background"></div>
+
+          <!-- Green completed part of route -->
+          <div
+            class="route-completed"
+            id="routeCompleted"
+          ></div>
+
+
+          <!-- Starting school -->
+          <div class="route-start">
+            <span>🏫</span>
+            <small>Start</small>
+          </div>
+
+
+          <!-- Moving student character -->
+          <div
+            class="student-marker"
+            id="studentMarker"
+          >
+            🧑‍🎓
+          </div>
+
+
+          <!-- JavaScript creates five checkpoints here -->
+          <div
+            class="route-checkpoints"
+            id="routeCheckpoints"
+          ></div>
+
+
+          <!-- Final goal -->
+          <div class="finish-marker">
+
+            <div class="goal-flag"></div>
+
+            <small>Weekly Goal</small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WEEKLY ACTIVITY CARDS -->
+
+    <section
+      class="section-card"
+      id="activitiesSection"
+    >
+
+      <div class="section-heading">
+        <div>
+          <span class="small-label">
+            Weekly Activities
+          </span>
+
+          <h2>Follow the learning pathway</h2>
+
+          <p>
+            Complete the required activities in order. Optional support
+            may be used whenever you need help.
+          </p>
+        </div>
+      </div>
+
+      <!-- JavaScript creates the activities here -->
+      <div
+        class="activity-grid"
+        id="activityGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- INTERNAL LESSON PAGE -->
+
+    <section
+      class="section-card hidden"
+      id="lessonSection"
+    >
+
+      <button
+        class="button button-light"
+        id="backToActivitiesButton"
+      >
+        ← Back to Activities
+      </button>
+
+
+      <div class="lesson-heading">
+
+        <div>
+          <span
+            class="small-label"
+            id="lessonBadge"
+          >
+            Checkpoint
+          </span>
+
+          <h2 id="lessonTitle"></h2>
+
+          <p id="lessonDescription"></p>
+        </div>
+
+
+        <div class="lesson-icon-box">
+          <span id="lessonIcon">📘</span>
+        </div>
+
+      </div>
+
+
+      <!-- Lesson notes and practice questions appear here -->
+      <div id="lessonContent"></div>
+
+
+      <div class="lesson-completion-area">
+
+        <button
+          class="button button-primary"
+          id="completeLessonButton"
+          disabled
+        >
+          Complete This Checkpoint
+        </button>
+
+        <p
+          class="help-text"
+          id="completionHelp"
+        >
+          Complete all questions correctly to unlock this button.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- REWARD CENTRE -->
+
+    <section class="reward-card reward-centre" id="rewardSection">
+
+      <div class="reward-icon">
+        🏆
+      </div>
+
+      <div class="reward-content">
+
+        <span class="small-label reward-label">
+          Reward Centre
+        </span>
+
+        <h2>
+          Your rewards recognise learning, effort and improvement
+        </h2>
+
+        <p class="reward-intro">
+          Mastery Stars show the skills you have demonstrated.
+          Checkpoint Progress shows what you have completed.
+          Reward Tokens provide one clear classroom privilege.
+          Rewards do not change your official quiz score.
+        </p>
+
+
+        <div class="current-week-reward">
+
+          <strong id="rewardWeekTitle">
+            Week 1: MEB Formula Foundations
+          </strong>
+
+          <span
+            class="release-badge"
+            id="rewardReleaseStatus"
+          >
+            Available now
+          </span>
+
+        </div>
+
+
+        <section class="mastery-panel" aria-labelledby="masteryStarsHeading">
+          <div class="reward-section-heading">
+            <div>
+              <h3 id="masteryStarsHeading">Mastery Stars</h3>
+              <p>
+                Earn each star once by demonstrating an important learning skill.
+              </p>
+            </div>
+
+            <div class="mastery-total">
+              <strong><span id="rewardMasteryCount">0</span> / 5</strong>
+              <span id="masteryBadgeStatus">Badge in progress</span>
+            </div>
+          </div>
+
+          <div class="mastery-star-grid" id="masteryStarGrid">
+
+            <article class="mastery-star-card" id="masteryStarFormula">
+              <span class="mastery-star-icon">☆</span>
+              <div>
+                <strong>Formula Star</strong>
+                <p>Use the correct formula for the calculation.</p>
+              </div>
+            </article>
+
+            <article class="mastery-star-card" id="masteryStarUnit">
+              <span class="mastery-star-icon">☆</span>
+              <div>
+                <strong>Unit Star</strong>
+                <p>Give the correct unit and appropriate decimal places.</p>
+              </div>
+            </article>
+
+            <article class="mastery-star-card" id="masteryStarPractice">
+              <span class="mastery-star-icon">☆</span>
+              <div>
+                <strong>Practice Star</strong>
+                <p>Complete the guided practice activities.</p>
+              </div>
+            </article>
+
+            <article class="mastery-star-card" id="masteryStarPersistence">
+              <span class="mastery-star-icon">☆</span>
+              <div>
+                <strong>Persistence Star</strong>
+                <p>Review feedback, correct your method and try successfully again.</p>
+              </div>
+            </article>
+
+            <article class="mastery-star-card" id="masteryStarApplication">
+              <span class="mastery-star-icon">☆</span>
+              <div>
+                <strong>Application Star</strong>
+                <p>Complete the final multi-step process-stream problem.</p>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="mastery-badge-box" id="masteryBadgeBox">
+            <span class="mastery-badge-icon">🏅</span>
+            <div>
+              <strong id="masteryBadgeTitle">Week 2 Process Problem Solver Badge</strong>
+              <p>Collect all five Mastery Stars to unlock this badge.</p>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="token-panel" aria-labelledby="rewardTokenHeading">
+          <div class="token-panel-main">
+            <span class="token-large-icon">🎟️</span>
+
+            <div>
+              <h3 id="rewardTokenHeading">Reward Token</h3>
+              <p id="rewardTokenStatus">
+                Complete all five checkpoints and submit the official quiz to earn one token.
+              </p>
+
+              <ul class="token-rules">
+                <li>Maximum one Reward Token for each weekly lesson.</li>
+                <li>One token = one lecturer-approved five-minute privilege.</li>
+                <li>Tokens do not change quiz marks or replace required learning.</li>
+              </ul>
+            </div>
+          </div>
+
+          <button
+            class="button button-bonus"
+            id="redeemTokenButton"
+            type="button"
+            disabled
+          >
+            Use My Token
+          </button>
+        </section>
+
+
+        <div class="next-release-box">
+
+          <strong>Next Learning Release</strong>
+
+          <p id="nextReleaseText">
+            Week 2 will be released after Wednesday’s mass lecture.
+          </p>
+
+        </div>
+
+
+        <p class="reward-note">
+          Website rewards are stored on this device. Official quiz results
+          and classroom privileges are confirmed by your lecturer.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- STUDENT COMPLETION EVIDENCE -->
+
+    <section
+      class="evidence-card locked-evidence"
+      id="evidenceSection"
+    >
+
+      <div class="evidence-heading">
+
+        <div>
+          <span class="small-label">
+            Weekly Completion Evidence
+          </span>
+
+          <h2>Keep a copy of your learning progress</h2>
+
+          <p id="evidenceInstructions">
+            Complete all five checkpoints and submit the official quiz
+            to unlock your evidence.
+          </p>
+        </div>
+
+        <div class="evidence-lock" id="evidenceLock">
+          🔒
+        </div>
+
+      </div>
+
+      <div class="evidence-buttons">
+        <a
+          class="button button-green"
+          href="https://forms.cloud.microsoft/r/6PWA9mfnuY"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Submit Weekly Progress
+        </a>
+      </div>
+
+
+      <div
+        class="evidence-form hidden"
+        id="evidenceForm"
+      >
+
+        <div class="student-details-grid">
+
+          <label>
+            Student Name
+
+            <input
+              type="text"
+              id="studentNameInput"
+              placeholder="Enter your full name"
+            >
+          </label>
+
+
+          <label>
+            Class
+
+            <input
+              type="text"
+              id="studentClassInput"
+              placeholder="Enter your class"
+            >
+          </label>
+
+        </div>
+
+
+        <div
+          class="evidence-document"
+          id="evidenceDocument"
+        >
+
+          <div class="evidence-title-row">
+
+            <div class="small-evidence-logo">
+              ITE
+            </div>
+
+            <div>
+              <h3>Foundation Math Hub</h3>
+
+              <p>
+                Weekly Learning Completion Evidence
+              </p>
+            </div>
+
+          </div>
+
+
+          <table class="evidence-table">
+
+            <tr>
+              <th>Student Name</th>
+              <td id="evidenceStudentName">Not entered</td>
+            </tr>
+
+            <tr>
+              <th>Class</th>
+              <td id="evidenceStudentClass">Not entered</td>
+            </tr>
+
+            <tr>
+              <th>Course</th>
+              <td>
+                Higher Nitec in Chemical Process Technology
+              </td>
+            </tr>
+
+            <tr>
+              <th>Learning Week</th>
+              <td id="evidenceWeek"></td>
+            </tr>
+
+            <tr>
+              <th>Checkpoints Completed</th>
+              <td id="evidenceCheckpoints"></td>
+            </tr>
+
+            <tr>
+              <th>Mastery Stars</th>
+              <td id="evidenceStars"></td>
+            </tr>
+
+            <tr>
+              <th>Reward Tokens</th>
+              <td id="evidenceTokens"></td>
+            </tr>
+
+            <tr>
+              <th>Final Level</th>
+              <td id="evidenceLevel"></td>
+            </tr>
+
+            <tr>
+              <th>Completion Date</th>
+              <td id="evidenceDate"></td>
+            </tr>
+
+          </table>
+
+
+          <div class="evidence-disclaimer">
+
+            <strong>Important:</strong>
+
+            This evidence confirms locally recorded website completion
+            on this device. Microsoft Forms remains the official record
+            of quiz submission and score.
+
+          </div>
+
+        </div>
+
+
+        <div class="evidence-buttons">
+
+          <button
+            class="button button-light"
+            id="saveEvidenceDetailsButton"
+          >
+            Update Evidence Details
+          </button>
+
+          <button
+            class="button button-green"
+            id="printEvidenceButton"
+          >
+            Print / Save as PDF
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </section>
+
+</main>
+
+
+<!-- ======================================================
+     PILOT TESTING NOTICE
+     ====================================================== -->
+
+<footer class="pilot-footer">
+
+  <div class="container">
+
+    <strong>Pilot Testing Notice</strong>
+
+    <p>
+      This learning website is being piloted for Higher Nitec in
+      Chemical Process Technology. It is intended for internal
+      educational use only.
+    </p>
+
+    <p>
+      Please do not reproduce, distribute, modify or share its content
+      without permission. This pilot is not an official public ITE
+      website unless formally approved.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<!-- ======================================================
+     SMALL MESSAGE
+     ====================================================== -->
+
+<div
+  class="toast-message hidden"
+  id="toastMessage"
+></div>
+
+
+<!-- ======================================================
+     COMPLETION POPUP
+     ====================================================== -->
+
+<div
+  class="modal-overlay hidden"
+  id="celebrationModal"
+>
+
+  <div class="modal-card" id="celebrationModalCard">
+
+    <button
+      class="modal-close"
+      id="closeModalButton"
+      aria-label="Close completion message"
+    >
+      ×
+    </button>
+
+    <div class="journey-pause hidden" id="journeyPause">
+
+      <div class="journey-pause-toolbar">
+        <span class="small-label">Plant Journey in Progress</span>
+
+        <button
+          class="journey-sound-toggle"
+          id="journeySoundToggle"
+          type="button"
+          aria-pressed="true"
+          aria-label="Turn plant journey sound off"
+        >
+          🔊 Sound On
+        </button>
+      </div>
+
+      <h2 id="journeyPauseTitle">Checkpoint achieved — moving to the next station!</h2>
+
+      <p id="journeyPauseText">
+        Watch your process trainee travel through the plant before the next station unlocks.
+      </p>
+
+      <div class="plant-board" id="plantBoard" aria-label="20-tile process plant journey"></div>
+
+      <div class="journey-event" id="journeyEvent" role="status" aria-live="polite">
+        Preparing the route…
+      </div>
+
+      <div class="journey-progress" aria-hidden="true">
+        <div class="journey-progress-fill" id="journeyProgressFill"></div>
+      </div>
+
+    </div>
+
+
+    <div class="achievement-reveal" id="achievementReveal">
+
+      <div
+        class="celebration-character"
+        id="celebrationCharacter"
+      >
+        🧑‍🎓
+      </div>
+
+    <h2 id="celebrationTitle">
+      Checkpoint Completed!
+    </h2>
+
+    <p id="celebrationText"></p>
+
+
+      <div class="criterion-game hidden" id="criterionGame">
+
+        <span class="small-label">Plant Achievement Card</span>
+
+        <h3 id="criterionTitle">Achievement unlocked</h3>
+
+        <div class="achievement-detail achievement-skill">
+          <strong>🏅 You achieved</strong>
+          <p id="criterionAchievement"></p>
+        </div>
+
+        <div class="achievement-detail achievement-plant">
+          <strong>🏭 Plant connection</strong>
+          <p id="criterionPlantConnection"></p>
+        </div>
+
+        <div class="achievement-detail achievement-matters">
+          <strong>🛡️ Why it matters</strong>
+          <p id="criterionWhyMatters"></p>
+        </div>
+
+        <div class="plant-challenge-box">
+          <strong>🔧 Mini plant challenge</strong>
+          <p class="criterion-question" id="criterionQuestion"></p>
+        </div>
+
+        <div class="criterion-options" id="criterionOptions"></div>
+
+        <div
+          class="criterion-feedback hidden"
+          id="criterionFeedback"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+      </div>
+
+
+      <div class="bonus-game mastery-update-box">
+
+      <h3>⭐ Mastery Update</h3>
+
+      <p id="bonusResult">
+        Visit the Reward Centre to see which Mastery Stars you have earned.
+        A Reward Token is earned only after the final independent check is completed.
+      </p>
+
+      <button
+        class="button button-bonus"
+        id="rollBonusButton"
+      >
+        Continue Mission
+      </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
 </body>
 </html>
